@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awesome Dashboard</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 20px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        p {
+            color: #666;
+        }
+
+        a {
+            text-decoration: none;
+            color: #3498db;
+            padding: 5px 10px;
+            border: 1px solid #3498db;
+            border-radius: 5px;
+            background-color: #fff;
+            margin-right: 10px;
+        }
+
+        a:hover {
+            background-color: #3498db;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <h2>Welcome, {{ username }}!</h2>
+    <p>Explore the awesome features of your dashboard.</p>
+    <div>
+        <a href="{{ url_for('logout') }}">Logout</a>
+        <a href="{{ url_for('fetch_nasa_data') }}">Fetch NASA Data</a>
+    </div>
+    <br>
+    <div>
+        <h3>Quick Links:</h3>
+        <ul>
+            <li><a href="profile">View Profile</a></li><br>
+            <li><a href="#">Help & Support</a></li><br>
+        </ul>
+    </div>
+    <div>
+        <h3>Recent Activities:</h3>
+        <ul>
+            <li>Logged in at {{ current_time }}</li>
+            <li>Viewed NASA data on {{ last_nasa_data_fetch }}</li>
+            <!-- Add more activities as needed -->
+        </ul>
+    </div>
+</body>
+</html>
+
